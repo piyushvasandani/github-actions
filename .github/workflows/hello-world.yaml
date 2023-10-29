@@ -18,6 +18,12 @@ jobs:
           echo "Hello world"
           echo "Another line"
         shell: bash
+  Secondjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: last goodbye
+        run: echo "This is the second job"
+        shell: bash
   finishjob:
     runs-on: ubuntu-latest
     steps:
