@@ -1,35 +1,39 @@
 name: Hello world workflow
+
 on:
   push:
     branches:
       - main
   pull_request:
     branches:
-      main
+      - main
   workflow_dispatch:
 
 jobs:
   Firstjob:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Hello world job
         run: |
-          echo "Hello world"
+          echo "Hello world12"
           echo "Another line"
         shell: bash
+
   Secondjob:
     runs-on: ubuntu-latest
     steps:
-      - name: last goodbye
-        run: echo "This is the second job"
+      - name: Second job
+        run: |
+          echo "This is the second job"
         shell: bash
+
   finishjob:
     runs-on: ubuntu-latest
     steps:
-      - name: last goodbye
+      - name: Third job
         run: |
-        echo "My name is ${{ env.NAME_VARIABLE }}"
-        echo "The password is ${{ secrets.NAME_VARIABLE }} "
+          echo "My name is $NAME_VARIABLE"
+          echo "The password is ${{ secrets.NAME_VARIABLE }}"
         shell: bash
-        
