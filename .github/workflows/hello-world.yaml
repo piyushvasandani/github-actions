@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: last goodbye
-        run: echo "goodbye world"
+        run: |
+        echo "My name is ${{ env.NAME_VARIABLE }}"
+        echo "The password is ${{ secrets.NAME_VARIABLE }} "
         shell: bash
         
