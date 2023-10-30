@@ -19,6 +19,7 @@ jobs:
   Firstjob:
     runs-on: ubuntu-latest
     steps:
+      - name: print-statement
         run: |
           echo "Hello world12"
           echo "Another line"
