@@ -1,0 +1,25 @@
+name: Hello world workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'The environment to deploy'
+        required: true
+        default: 'production'
+
+
+jobs:
+  Firstjob:
+    runs-on: ubuntu-latest
+    steps:
+        run: |
+          echo "Hello world12"
+          echo "Another line"
+        shell: bash
