@@ -34,6 +34,6 @@ jobs:
     steps:
       - name: Third job
         run: |
-          echo "My name is ${{ env.NAME_VARIABLE }}"
+          echo "My name is ${{ vars.NAME_VARIABLE }}"
           echo "The password is ${{ secrets.NAME_VARIABLE }}"
         shell: bash
