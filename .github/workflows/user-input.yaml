@@ -13,7 +13,11 @@ on:
         description: 'The environment to deploy'
         required: true
         default: 'production'
-
+        type: choice
+        options:
+          - dev
+          - qa
+          - prod
 
 jobs:
   Firstjob:
