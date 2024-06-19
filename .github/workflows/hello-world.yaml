@@ -31,6 +31,8 @@ jobs:
         shell: bash
 
   Secondjob:
+    needs:
+      -  Firstjob
     runs-on: ubuntu-latest
     steps:
       - name: Second job
@@ -39,6 +41,9 @@ jobs:
         shell: bash
 
   finishjob:
+    needs:
+      - Firstjob
+      - Secondjob
     runs-on: ubuntu-latest
     steps:
       - name: Third job
