@@ -9,9 +9,18 @@ on:
       - main
   workflow_dispatch:
 
+    inputs:
+
+      ContainerTag:
+        type: string
+        default: ""
+        description: Container Tag
+
+
 jobs:
   Firstjob:
     runs-on: ubuntu-latest
+    if: inputs.ContainerTag
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
